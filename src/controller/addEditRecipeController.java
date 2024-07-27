@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.control.*;
 import model.Ingredient;
 import model.Recipe;
+import model.RecipeBook;
 
 public class addEditRecipeController extends Controller<Recipe>  {
 
@@ -27,7 +28,12 @@ public class addEditRecipeController extends Controller<Recipe>  {
 
     @FXML
     public void exit() {
-        getRecipe().setName(nameTf.getText());
+        String oldName = getRecipe().getName();
+        String newName = nameTf.getText();
+        if (!(oldName.equals(newName))) {
+            RecipeBook.updateRecipeFileName(oldName, newName);
+            getRecipe().setName(nameTf.getText());
+        }
         stage.close();
     }
 
@@ -53,15 +59,20 @@ public class addEditRecipeController extends Controller<Recipe>  {
 
     @FXML
     public void onEdit(){
-        try {
+        Ingredient selectedIngredient = ingredientsTV.getSelectionModel().getSelectedItem();
+        if (selectedIngredient != null) {
+            try {
             Stage stage = new Stage();
             stage.getIcons().add(new Image("/view/images/prepIcon.jpeg"));
             stage.setX(ViewLoader.X);
             stage.setY(ViewLoader.Y);
-            ViewLoader.showStage(ingredientsTV.getSelectionModel().getSelectedItem(), "/view/addEditIngredient.fxml", "Edit Ingredient", stage);
-        } catch (IOException ex) {
-            Logger.getLogger(PrepPlannerController.class.getName()).log(Level.SEVERE, null, ex);
+            ViewLoader.showStage(selectedIngredient, "/view/addEditIngredient.fxml", "Edit Ingredient", stage);
+            } catch (IOException ex) {
+                Logger.getLogger(PrepPlannerController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
         }
+        
     }
 
     public Recipe getRecipe(){

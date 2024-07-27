@@ -22,7 +22,9 @@ public class RecipeBookController extends Controller<RecipeBook> {
 
     @FXML 
     private void deleteRecipe(){
-        getRecipeBook().getRecipes().remove(recipesTV.getSelectionModel().getSelectedItem());
+        Recipe recipeToDelete = recipesTV.getSelectionModel().getSelectedItem();
+        getRecipeBook().getRecipes().remove(recipeToDelete);
+        getRecipeBook().deleteRecipeFile(recipeToDelete);
     }
     
     @FXML

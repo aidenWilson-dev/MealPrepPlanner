@@ -27,6 +27,16 @@ public class Recipe {
         this.recipeName.set(name);
     }
 
+    public String ingredientDump(){
+        StringBuilder dump = new StringBuilder();
+        for (Ingredient ingredient : ingredients) {
+            StringBuilder individualDump = new StringBuilder();
+            individualDump.append(String.format("%s:%d\n", ingredient.getName(), ingredient.getAmount()));
+            dump.append(individualDump);
+        }
+        return dump.toString();
+    }
+
     @Override
     public String toString() {
         return recipeName.get();
