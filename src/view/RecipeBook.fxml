@@ -26,6 +26,9 @@
 
         <HBox alignment="CENTER" prefWidth="800" spacing="20">
             <TableView fx:id="recipesTV" prefWidth="400" prefHeight="150" items="${controller.RecipeBook.recipes}">
+                <placeholder>
+                    <Label text="No Recipes Saved!"/>
+                </placeholder>
                 <columns>
                     <TableColumn text="Recipe:" prefWidth="380">
                         <cellValueFactory><PropertyValueFactory property="recipeName"/></cellValueFactory>

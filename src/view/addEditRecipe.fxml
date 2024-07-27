@@ -28,6 +28,9 @@
         <TextField fx:id="nameTf" alignment="CENTER"/>
         <HBox alignment="CENTER" prefWidth="800" spacing="20">
             <TableView fx:id="ingredientsTV" prefWidth="400" prefHeight="150" items="${controller.Recipe.ingredients}">
+                <placeholder>
+                    <Label text="No Ingredients In Recipe!"/>
+                </placeholder>
                 <columns>
                     <TableColumn text="Name" prefWidth="200">
                         <cellValueFactory><PropertyValueFactory property="ingredientName"/></cellValueFactory>
@@ -42,9 +45,9 @@
             </TableView>
             
             <VBox spacing="10">
-                <Button text="Add" fx:id="addButton" alignment="CENTER"/>
-                <Button text="Delete" fx:id="deleteButton" alignment="CENTER"/>
-                <Button text="Edit" fx:id="editButton" alignment="CENTER"/>
+                <Button text="Add" fx:id="addButton" onAction="#onAdd" alignment="CENTER"/>
+                <Button text="Delete" fx:id="deleteButton" onAction="#onDelete" alignment="CENTER"/>
+                <Button text="Edit" fx:id="editButton" onAction="#onEdit" alignment="CENTER"/>
                 <Button text="Save" fx:id="exitButton" onAction="#exit"/>
             </VBox>
         </HBox>  

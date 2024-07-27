@@ -5,14 +5,10 @@ import au.edu.uts.ap.javafx.Controller;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.stage.*;
 import javafx.scene.image.Image;
 import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
 import model.Recipe;
 import model.RecipeBook;
 
@@ -20,9 +16,6 @@ public class RecipeBookController extends Controller<RecipeBook> {
 
     @FXML
     private Button exitButton;
-
-    //@FXML
-    //private ListView<Recipe> recipesLV;
 
     @FXML
     private TableView<Recipe> recipesTV;
@@ -35,11 +28,13 @@ public class RecipeBookController extends Controller<RecipeBook> {
     @FXML
     private void addRecipe(){
         try {
+            Recipe newRecipe = new Recipe();
+            getRecipeBook().getRecipes().add(newRecipe);
             Stage stage = new Stage();
             stage.getIcons().add(new Image("/view/images/prepIcon.jpeg"));
             stage.setX(ViewLoader.X);
             stage.setY(ViewLoader.Y);
-            ViewLoader.showStage(new Recipe(), "/view/addEditRecipe.fxml", "Add Recipe", stage);
+            ViewLoader.showStage(newRecipe, "/view/addEditRecipe.fxml", "Add Recipe", stage);
         } catch (IOException ex) {
             Logger.getLogger(PrepPlannerController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -47,7 +42,6 @@ public class RecipeBookController extends Controller<RecipeBook> {
 
     @FXML
     private void editRecipe(){
-        //Recipe currRecipe = recipesLV.getSelectionModel().getSelectedItem();
         try {
             Stage stage = new Stage();
             stage.getIcons().add(new Image("/view/images/prepIcon.jpeg"));
@@ -57,7 +51,6 @@ public class RecipeBookController extends Controller<RecipeBook> {
         } catch (IOException ex) {
             Logger.getLogger(PrepPlannerController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     }
 
     @FXML

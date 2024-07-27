@@ -1,6 +1,5 @@
 package model;
 
-import java.util.ArrayList;
 
 import javafx.beans.property.ReadOnlyStringProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -10,13 +9,13 @@ import javafx.collections.ObservableList;
 
 public class Recipe {
     private ObservableList<Ingredient> ingredients = FXCollections.observableArrayList();
-    //private String recipeName;
 
     private StringProperty recipeName = new SimpleStringProperty();
     public final String getName() { return recipeName.get(); }
     public ReadOnlyStringProperty recipeNameProperty() { return recipeName; }
 
     public Recipe(){
+        recipeName.set("Recipe Name");
     }
 
     public void addIngredient(String name, Integer amount){

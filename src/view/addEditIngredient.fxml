@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.*?>
+
+<VBox styleClass="background" prefHeight="1280" prefWidth="1024" spacing="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.addEditIngredientController">
+
+    <padding>
+        <Insets top="50" right="50" bottom="50" left="50" />
+    </padding>
+
+    <VBox alignment="CENTER" spacing="50">
+        <Label text="Meal Prep Planner" styleClass="label-header" alignment="CENTER"/>
+        <TextField text="Ingredient Name" fx:id="nameTf" alignment="CENTER"/>
+        <TextField text="0" fx:id="amountTf" alignment="CENTER"/>
+        <HBox alignment="CENTER" >
+            <Button text="Save" fx:id="exitButton" onAction="#exit"/>
+        </HBox> 
+    </VBox>
+    
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+</VBox>

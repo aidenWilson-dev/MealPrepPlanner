@@ -1,13 +1,9 @@
 package model;
 
-import java.text.*;
 import javafx.beans.property.*;
-import javafx.beans.binding.*;
-import java.util.*;
 
 public class Ingredient {
     
-
     private StringProperty ingredientName = new SimpleStringProperty();
     public final String getName() { return ingredientName.get(); }
     public ReadOnlyStringProperty ingredientNameProperty() { return ingredientName; }
@@ -21,4 +17,11 @@ public class Ingredient {
         this.amountGrams.set(amt);
     }
 
+    public void setIngredientName(String newName){
+        this.ingredientName.set(newName);
+    }
+
+    public void setIngredientAmount(int newAmount){
+        this.amountGrams.set(newAmount);
+    }
 }

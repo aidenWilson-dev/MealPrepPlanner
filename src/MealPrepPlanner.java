@@ -3,7 +3,6 @@ import controller.PrepPlannerController;
 import javafx.stage.*;
 import javafx.application.Application;
 import javafx.scene.image.Image;
-import model.*;
 
 public class MealPrepPlanner extends Application {
 
