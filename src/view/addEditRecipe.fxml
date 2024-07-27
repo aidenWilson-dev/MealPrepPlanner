@@ -12,35 +12,40 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.control.cell.*?>
 
-<VBox styleClass="background" prefHeight="1280" prefWidth="1024" spacing="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RecipeBookController">
+
+<VBox styleClass="background" prefHeight="1280" prefWidth="1024" spacing="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.addEditRecipeController">
 
     <padding>
         <Insets top="50" right="10" bottom="50" left="10" />
     </padding>
     <VBox alignment="CENTER" spacing="20">
-        <Label text="Recipes" styleClass="label-header" alignment="CENTER"/>
-
+        <TextField fx:id="nameTf" alignment="CENTER"/>
         <HBox alignment="CENTER" prefWidth="800" spacing="20">
-            <TableView fx:id="recipesTV" prefWidth="400" prefHeight="150" items="${controller.RecipeBook.recipes}">
+            <TableView fx:id="ingredientsTV" prefWidth="400" prefHeight="150" items="${controller.Recipe.ingredients}">
                 <columns>
-                    <TableColumn text="Recipe Name" prefWidth="380">
-                        <cellValueFactory><PropertyValueFactory property="recipeName"/></cellValueFactory>
+                    <TableColumn text="Name" prefWidth="200">
+                        <cellValueFactory><PropertyValueFactory property="ingredientName"/></cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Amount (g)" prefWidth="180">
+                        <cellValueFactory><PropertyValueFactory property="amount"/></cellValueFactory>
                     </TableColumn>
                 </columns>
                 <stylesheets>
                     <URL value="@style.css"/>
                 </stylesheets>
             </TableView>
-
+            
             <VBox spacing="10">
-                <Button text="Add" fx:id="addButton" onAction="#addRecipe" alignment="CENTER"/>
-                <Button text="Delete" fx:id="deleteButton" onAction="#deleteRecipe" alignment="CENTER"/>
-                <Button text="Edit" fx:id="editButton" onAction="#editRecipe" alignment="CENTER"/>
-                <Button text="Close" fx:id="exitButton" onAction="#exit"/>
+                <Button text="Add" fx:id="addButton" alignment="CENTER"/>
+                <Button text="Delete" fx:id="deleteButton" alignment="CENTER"/>
+                <Button text="Edit" fx:id="editButton" alignment="CENTER"/>
+                <Button text="Save" fx:id="exitButton" onAction="#exit"/>
             </VBox>
         </HBox>  
     </VBox>

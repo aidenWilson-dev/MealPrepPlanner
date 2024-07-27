@@ -11,19 +11,33 @@ import javafx.stage.*;
 import javafx.scene.image.Image;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
-import model.PrepPlannerModel;
+import model.PrepPlanner;
+import model.RecipeBook;
 
-public class PrepPlannerController extends Controller<PrepPlannerModel> {
+public class PrepPlannerController extends Controller<PrepPlanner> {
 
     @FXML
     private Button exitButton;
 
     @FXML
     public void exit() {
-        Platform.exit();
+        stage.close();
     }
 
-    public PrepPlannerModel getPrepPlanner(){
+    @FXML
+    public void recipeBook(){
+        try {
+            Stage stage = new Stage();
+            stage.getIcons().add(new Image("/view/images/prepIcon.jpeg"));
+            stage.setX(ViewLoader.X);
+            stage.setY(ViewLoader.Y);
+            ViewLoader.showStage(new RecipeBook(), "/view/RecipeBook.fxml", "Recipe Book", stage);
+        } catch (IOException ex) {
+            Logger.getLogger(PrepPlannerController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public PrepPlanner getPrepPlanner(){
         return this.model;
     }
 }

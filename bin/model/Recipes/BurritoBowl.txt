@@ -1,0 +1,3 @@
+Rice:200
+Ground Beef:150
+Seasoning:15

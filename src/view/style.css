@@ -81,7 +81,7 @@
 }
 
 .table-view .column-header .label {
-    -fx-font-size: 12pt;
+    -fx-font-size: 30pt;
     -fx-font-family: "Segoe UI Light";
     -fx-text-fill: white;
     -fx-alignment: center-left;
@@ -113,7 +113,7 @@
 }
 
 .list-view .list-cell .text {
-    -fx-font-size: 12pt;
+    -fx-font-size: 30pt;
     -fx-font-family: "Segoe UI Light";
     -fx-text-fill: white;
     -fx-alignment: center-left;
@@ -144,12 +144,11 @@
 }
 
 .list-view .list-cell .text, .list-view .placeholder {
-    -fx-font-size: 12pt;
+    -fx-font-size: 30pt;
     -fx-font-family: "Segoe UI Light";
     -fx-text-fill: white;
     -fx-opacity: 1;
 }
-
 
 
 .table-view {
@@ -161,7 +160,7 @@
 
 
 .text-field, .password-field{
-    -fx-font-size: 11pt;
+    -fx-font-size: 20pt;
     -fx-font-family: "Helvetica";
     -fx-font-weight: bold;
     -fx-pref-height: 10;
