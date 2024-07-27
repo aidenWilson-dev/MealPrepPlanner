@@ -62,6 +62,7 @@
     -fx-table-cell-border-color: transparent;
     -fx-table-header-border-color: transparent;
     -fx-padding: 5;
+    -fx-font-size:20pt;   
 }
 
 .table-view .column-header-background {
@@ -81,12 +82,13 @@
 }
 
 .table-view .column-header .label {
-    -fx-font-size: 30pt;
+    -fx-font-size: 20pt;
     -fx-font-family: "Segoe UI Light";
     -fx-text-fill: white;
     -fx-alignment: center-left;
     -fx-opacity: 1;
 }
+
 
 .table-view:focused .table-row-cell:filled:focused:selected {
     -fx-background-color: -fx-focus-color;
@@ -160,7 +162,7 @@
 
 
 .text-field, .password-field{
-    -fx-font-size: 20pt;
+    -fx-font-size: 31pt;
     -fx-font-family: "Helvetica";
     -fx-font-weight: bold;
     -fx-pref-height: 10;

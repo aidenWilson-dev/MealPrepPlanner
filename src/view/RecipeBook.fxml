@@ -27,7 +27,7 @@
         <HBox alignment="CENTER" prefWidth="800" spacing="20">
             <TableView fx:id="recipesTV" prefWidth="400" prefHeight="150" items="${controller.RecipeBook.recipes}">
                 <columns>
-                    <TableColumn text="Recipe Name" prefWidth="380">
+                    <TableColumn text="Recipe:" prefWidth="380">
                         <cellValueFactory><PropertyValueFactory property="recipeName"/></cellValueFactory>
                     </TableColumn>
                 </columns>
