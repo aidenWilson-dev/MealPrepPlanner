@@ -16,7 +16,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.*?>
 
-<VBox styleClass="background" prefHeight="1280" prefWidth="1024" spacing="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.addEditIngredientController">
+<VBox styleClass="background" prefHeight="1280" prefWidth="1024" spacing="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddEditIngredientController">
 
     <padding>
         <Insets top="50" right="50" bottom="50" left="50" />

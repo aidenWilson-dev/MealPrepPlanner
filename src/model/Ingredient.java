@@ -4,6 +4,7 @@ import javafx.beans.property.*;
 
 public class Ingredient {
     
+    //Observable propertys for each field of an ingredient 
     private StringProperty ingredientName = new SimpleStringProperty();
     public final String getName() { return ingredientName.get(); }
     public ReadOnlyStringProperty ingredientNameProperty() { return ingredientName; }
@@ -17,6 +18,7 @@ public class Ingredient {
         this.amountGrams.set(amt);
     }
 
+    //Setters for ingredient name and ingredient amount
     public void setIngredientName(String newName){
         this.ingredientName.set(newName);
     }

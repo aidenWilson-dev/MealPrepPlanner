@@ -213,3 +213,19 @@
 .button:default:hover {
     -fx-background-color: derive(-fx-focus-color,30%);
 }
+
+.check-box {
+    -fx-font-size: 10pt; /* Adjust the font size */
+    -fx-text-fill: #ffffff;
+}
+
+.check-box .box {
+    -fx-background-color: #ffffff; /* Customize the background color */
+    -fx-border-color: #000000; /* Customize the border color */
+    -fx-border-width: 2pt; /* Customize the border width */
+    -fx-padding: 5pt; /* Adjust padding */
+}
+
+.check-box .check-mark {
+    -fx-size: 10pt; /* Adjust the size of the check mark */
+}

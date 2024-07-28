@@ -1,3 +1,0 @@
-Beef:200
-Rice:200
-Lettuce:50

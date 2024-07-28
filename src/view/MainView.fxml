@@ -30,7 +30,7 @@
 
         <Label text="Meal Prep Planner" styleClass="label-header" alignment="CENTER"/>
         <Button text="Recipe Book" fx:id="recipeButton" onAction="#recipeBook" alignment="CENTER"/>
-        <Button text="Meal Planner" fx:id="mealButton" alignment="CENTER"/>
+        <Button text="Meal Planner" fx:id="mealButton" onAction="#mealPlanner" alignment="CENTER"/>
 
         <HBox alignment="CENTER" >
             <Button text="Exit" fx:id="exitButton" onAction="#exit"/>
