@@ -16,6 +16,7 @@ import model.WeekBreakdown;
 
 public class MealSelectorController extends Controller<MealPlanner> {
 
+    //Recipe listView
     @FXML
     private ListView<Recipe> recipeLV;
 

@@ -1,6 +1,6 @@
 import au.edu.uts.ap.javafx.*;
-import controller.PrepPlannerController;
 import javafx.stage.*;
+import model.PrepPlanner;
 import javafx.application.Application;
 import javafx.scene.image.Image;
 
@@ -12,7 +12,7 @@ public class MealPrepPlanner extends Application {
         primaryStage.getIcons().add(new Image("/view/images/prepIcon.jpeg"));
         primaryStage.setX(ViewLoader.X);
         primaryStage.setY(ViewLoader.Y);
-        ViewLoader.showStage(new PrepPlannerController(), "/view/MainView.fxml", "Prep Planner", primaryStage);
+        ViewLoader.showStage(new PrepPlanner(), "/view/MainView.fxml", "Prep Planner", primaryStage);
     }
 
     public static void main(String[] args) {

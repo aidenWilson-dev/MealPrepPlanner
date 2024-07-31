@@ -7,6 +7,7 @@ import model.WeekBreakdown;
 
 public class WeekBreakdownController extends Controller<WeekBreakdown> {
 
+    //Name label
     @FXML
     private Label nameLabel;
 

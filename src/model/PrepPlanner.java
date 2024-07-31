@@ -1,7 +1,5 @@
 package model;
 
-public class PrepPlanner {
+public class PrepPlanner {}
 
-    public PrepPlanner() {
-    }
-}
+//Model for the main page, nothing needed here

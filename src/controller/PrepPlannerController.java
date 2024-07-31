@@ -19,6 +19,7 @@ public class PrepPlannerController extends Controller<PrepPlanner> {
     @FXML
     private Button exitButton;
 
+    //Recipe book and meal Planner
     private RecipeBook recipeBook;
     private MealPlanner mealPlanner;
 

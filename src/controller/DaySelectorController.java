@@ -14,6 +14,7 @@ import model.MealPlanner;
 
 public class DaySelectorController extends Controller<MealPlanner>{
 
+    //Amount of meals in week
     final int MEALS_IN_WEEK = 14;
 
     //Array of all checkboxes to make iterating over it easier 
