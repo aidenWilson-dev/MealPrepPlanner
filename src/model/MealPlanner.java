@@ -20,6 +20,11 @@ public class MealPlanner {
         mealsNumber = num;
     }
 
+    //get meals number
+    public int getMealsNumber(){
+        return mealsNumber;
+    }
+
     //Return recipe list, used to pass through to the day planner
     public ObservableList<Recipe> getRecipeList(){
         return recipeList;

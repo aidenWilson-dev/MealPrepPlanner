@@ -6,13 +6,11 @@ import java.util.logging.Logger;
 
 import au.edu.uts.ap.javafx.Controller;
 import au.edu.uts.ap.javafx.ViewLoader;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import model.MealPlanner;
-import model.Recipe;
 
 public class DaySelectorController extends Controller<MealPlanner>{
 
@@ -81,7 +79,7 @@ public class DaySelectorController extends Controller<MealPlanner>{
     @FXML
     public void onContinue(){
         //Count the amount of selected checkboxes 
-        //numMeals will be used to calculate amount of each ingredient needed
+        //NumMeals is the amount of meals NOT needed
         int numMeals = 0;
         for (CheckBox checkBox : checkBoxes) {
             if (checkBox.isSelected()) {
@@ -95,7 +93,9 @@ public class DaySelectorController extends Controller<MealPlanner>{
                 stage.getIcons().add(new Image("/view/images/prepIcon.jpeg"));
                 stage.setX(ViewLoader.X);
                 stage.setY(ViewLoader.Y);
-                final ObservableList<Recipe> recipeList = getMealPlanner().getRecipeList();
+                //NumMeals is the amount of meals NOT needed, to get the amount needed we subtract 
+                //that number from 14
+                getMealPlanner().setMealsNumber(14-numMeals);
                 ViewLoader.showStage(getMealPlanner(), "/view/MealSelector.fxml", "Select Meal", stage);
             //Error handling
             } catch (IOException ex) {
@@ -137,6 +137,7 @@ public class DaySelectorController extends Controller<MealPlanner>{
         
     }
 
+    //Get MealPlanner
     public MealPlanner getMealPlanner(){
         return this.model;
     }
