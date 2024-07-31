@@ -19,10 +19,16 @@ public class RecipeBook {
         LoadRecipes();
     }
 
+    //Get the directory to make the recipe folder
+    public static String getRecipeFolder(){
+        return String.format("%s/Recipes", System.getProperty("user.dir"));
+    }
+
     //Delete recipe file
     public void deleteRecipeFile(Recipe recipeToRemove){
         //Load Directory
-        File recipeFolder = new File("src/model/Recipes");
+        File recipeFolder = new File(getRecipeFolder());
+        recipeFolder.mkdirs();
         if (recipeFolder.isDirectory()) {
             //Get recipe file name
             String recipeFileName = getRecipeFileName(recipeToRemove);
@@ -53,7 +59,8 @@ public class RecipeBook {
     //Update a recipes file name
     public static void updateRecipeFileName(String oldName, String newName){
         //Load Directory 
-        File recipeFolder = new File("src/model/Recipes");
+        File recipeFolder = new File(getRecipeFolder());
+        recipeFolder.mkdirs();
         if (recipeFolder.isDirectory()) {
             for (File file : recipeFolder.listFiles()) {
                 //If the file is the same name as the old one
@@ -71,7 +78,8 @@ public class RecipeBook {
     //Updating a recipes contents
     public void updateRecipes(){
         //Load Directory
-        File recipeFolder = new File("src/model/Recipes");
+        File recipeFolder = new File(getRecipeFolder());
+        recipeFolder.mkdirs();
         if (recipeFolder.isDirectory()) {
             //For each recipe currently in the recipe list
             for (Recipe recipe : recipes) {
@@ -128,7 +136,8 @@ public class RecipeBook {
     //Load saved recipes
     public void LoadRecipes(){
         //Load Directory
-        File recipeFolder = new File("src/model/Recipes");
+        File recipeFolder = new File(getRecipeFolder());
+        recipeFolder.mkdirs();
         if (recipeFolder.isDirectory()) {
             //Load saved recipe files 
             File[] recipeFileList = recipeFolder.listFiles();
