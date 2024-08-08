@@ -36,8 +36,7 @@
             <RadioButton fx:id="cupButton" text="Cups" styleClass="check-box"/>
             <RadioButton fx:id="tableButton" text="Tbsp" styleClass="check-box"/>
             <RadioButton fx:id="teaButton" text="Tsp" styleClass="check-box"/>
-            <RadioButton fx:id="gramButton" text="Gram" styleClass="check-box" />
-            <RadioButton fx:id="kiloButton" text="Kg" styleClass="check-box"/>
+            <RadioButton fx:id="gramButton" text="Grams" styleClass="check-box" />
         </HBox>
         <HBox alignment="CENTER" >
             <Button text="Save" fx:id="exitButton" onAction="#exit"/>

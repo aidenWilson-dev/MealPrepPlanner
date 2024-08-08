@@ -29,8 +29,6 @@ public class AddEditIngredientController extends Controller<Ingredient>  {
     @FXML
     private RadioButton gramButton;
 
-    @FXML
-    private RadioButton kiloButton;
 
     //Toggle group for radio buttons
     private ToggleGroup measurementToggleGroup;
@@ -43,7 +41,6 @@ public class AddEditIngredientController extends Controller<Ingredient>  {
         tableButton.setToggleGroup(measurementToggleGroup);
         teaButton.setToggleGroup(measurementToggleGroup);   
         gramButton.setToggleGroup(measurementToggleGroup);
-        kiloButton.setToggleGroup(measurementToggleGroup);
         //Set the text fields default text to the ingredients name and amount  
         nameTf.setText(getIngredient().getName());
         amountTf.setText(String.valueOf(getIngredient().getAmount()));
@@ -58,11 +55,8 @@ public class AddEditIngredientController extends Controller<Ingredient>  {
             case "Tsp":
                 measurementToggleGroup.selectToggle(teaButton);
                 break;
-            case "Gram":
+            case "Grams":
                 measurementToggleGroup.selectToggle(gramButton);
-                break;
-            case "Kg":
-                measurementToggleGroup.selectToggle(kiloButton);
                 break;        
             default:
                 break;

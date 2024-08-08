@@ -154,7 +154,7 @@ public class RecipeBook {
                             //Split it at the seperator 
                             String[] parts = line.split(":");
                             //Add the ingredient to the recipe 
-                            currRecipe.addIngredient(parts[0], Integer.parseInt(parts[1]));
+                            currRecipe.addIngredient(parts[0], Integer.parseInt(parts[1]), parts[2]);
                         }
                         //Convert recipe filename to recipe name
                         String recipeName = getRecipeName(recipeFile);

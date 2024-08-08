@@ -32,7 +32,7 @@
                     <Label text="No Ingredients In Recipe!"/>
                 </placeholder>
                 <columns>
-                    <TableColumn text="Name" prefWidth="170">
+                    <TableColumn text="Name" prefWidth="160">
                         <cellValueFactory><PropertyValueFactory property="ingredientName"/></cellValueFactory>
                     </TableColumn>
                     <TableColumn text="Amount" prefWidth="125">

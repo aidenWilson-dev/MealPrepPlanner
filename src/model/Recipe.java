@@ -23,8 +23,8 @@ public class Recipe {
     }
 
     //Add ingredient to recipe
-    public void addIngredient(String name, Integer amount){
-        Ingredient ingredient = new Ingredient(name, amount, "");
+    public void addIngredient(String name, Integer amount, String measurement){
+        Ingredient ingredient = new Ingredient(name, amount, measurement);
         ingredients.add(ingredient);
     }
 
@@ -40,7 +40,7 @@ public class Recipe {
         //Ingredient:Amount
         for (Ingredient ingredient : ingredients) {
             StringBuilder individualDump = new StringBuilder();
-            individualDump.append(String.format("%s:%d\n", ingredient.getName(), ingredient.getAmount()));
+            individualDump.append(String.format("%s:%d:%s\n", ingredient.getName(), ingredient.getAmount(), ingredient.getAmountMeasurement()));
             dump.append(individualDump);
         }
         //Return the dump
