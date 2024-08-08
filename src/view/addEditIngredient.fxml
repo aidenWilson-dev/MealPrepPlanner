@@ -14,7 +14,10 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.control.*?>
+
 
 <VBox styleClass="background" prefHeight="1280" prefWidth="1024" spacing="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddEditIngredientController">
 
@@ -22,14 +25,25 @@
         <Insets top="50" right="50" bottom="50" left="50" />
     </padding>
 
-    <VBox alignment="CENTER" spacing="50">
+    <VBox alignment="CENTER" spacing="25">
         <Label text="Meal Prep Planner" styleClass="label-header" alignment="CENTER"/>
+        <Label text="Ingredient Name" styleClass="label-h2"/>
         <TextField text="Ingredient Name" fx:id="nameTf" alignment="CENTER"/>
+        <Label text="Amount" styleClass="label-h2"/>
         <TextField text="0" fx:id="amountTf" alignment="CENTER"/>
+        <Label text="Measurement" styleClass="label-h2"/>
+        <HBox alignment="CENTER" spacing="50">
+            <RadioButton fx:id="cupButton" text="Cups" styleClass="check-box"/>
+            <RadioButton fx:id="tableButton" text="Tbsp" styleClass="check-box"/>
+            <RadioButton fx:id="teaButton" text="Tsp" styleClass="check-box"/>
+            <RadioButton fx:id="gramButton" text="Gram" styleClass="check-box" />
+            <RadioButton fx:id="kiloButton" text="Kg" styleClass="check-box"/>
+        </HBox>
         <HBox alignment="CENTER" >
             <Button text="Save" fx:id="exitButton" onAction="#exit"/>
         </HBox> 
     </VBox>
+    
     
     <stylesheets>
         <URL value="@style.css"/>

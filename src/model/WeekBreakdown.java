@@ -19,7 +19,7 @@ public class WeekBreakdown {
         daysSelected = days;
         for (Ingredient ingredient : recipe.getIngredients()) {
             int totalAmount = (ingredient.getAmount() * daysSelected);
-            ingredientSum.add(new Ingredient(ingredient.getName(), totalAmount));      
+            ingredientSum.add(new Ingredient(ingredient.getName(), totalAmount, ingredient.getAmountMeasurement()));      
         }
     }
 

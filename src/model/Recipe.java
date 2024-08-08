@@ -24,7 +24,7 @@ public class Recipe {
 
     //Add ingredient to recipe
     public void addIngredient(String name, Integer amount){
-        Ingredient ingredient = new Ingredient(name, amount);
+        Ingredient ingredient = new Ingredient(name, amount, "");
         ingredients.add(ingredient);
     }
 

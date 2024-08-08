@@ -27,16 +27,19 @@
     <VBox alignment="CENTER" spacing="20">
         <TextField fx:id="nameTf" alignment="CENTER"/>
         <HBox alignment="CENTER" prefWidth="800" spacing="20">
-            <TableView fx:id="ingredientsTV" prefWidth="400" prefHeight="150" items="${controller.Recipe.ingredients}">
+            <TableView fx:id="ingredientsTV" prefWidth="500" prefHeight="150" items="${controller.Recipe.ingredients}">
                 <placeholder>
                     <Label text="No Ingredients In Recipe!"/>
                 </placeholder>
                 <columns>
-                    <TableColumn text="Name" prefWidth="200">
+                    <TableColumn text="Name" prefWidth="170">
                         <cellValueFactory><PropertyValueFactory property="ingredientName"/></cellValueFactory>
                     </TableColumn>
-                    <TableColumn text="Amount (g)" prefWidth="180">
+                    <TableColumn text="Amount" prefWidth="125">
                         <cellValueFactory><PropertyValueFactory property="amount"/></cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Measurement" prefWidth="200">
+                        <cellValueFactory><PropertyValueFactory property="amountMeasurement"/></cellValueFactory>
                     </TableColumn>
                 </columns>
                 <stylesheets>

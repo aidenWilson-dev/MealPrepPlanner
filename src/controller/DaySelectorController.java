@@ -87,21 +87,19 @@ public class DaySelectorController extends Controller<MealPlanner>{
                 numMeals++;
             }
         }
-        if (numMeals > 0) {
-            //Create new stage to choose recipe
-            try {
-                Stage stage = new Stage();
-                stage.getIcons().add(new Image("/view/images/prepIcon.jpeg"));
-                stage.setX(ViewLoader.X);
-                stage.setY(ViewLoader.Y);
-                //NumMeals is the amount of meals NOT needed, to get the amount needed we subtract 
-                //that number from 14
-                getMealPlanner().setMealsNumber(14-numMeals);
-                ViewLoader.showStage(getMealPlanner(), "/view/MealSelector.fxml", "Select Meal", stage);
-            //Error handling
-            } catch (IOException ex) {
-                Logger.getLogger(PrepPlannerController.class.getName()).log(Level.SEVERE, null, ex);
-            }   
+        //Create new stage to choose recipe
+        try {
+            Stage stage = new Stage();
+            stage.getIcons().add(new Image("/view/images/prepIcon.jpeg"));
+            stage.setX(ViewLoader.X);
+            stage.setY(ViewLoader.Y);
+            //NumMeals is the amount of meals NOT needed, to get the amount needed we subtract 
+            //that number from 14
+            getMealPlanner().setMealsNumber(14-numMeals);
+            ViewLoader.showStage(getMealPlanner(), "/view/MealSelector.fxml", "Select Meal", stage);
+        //Error handling
+        } catch (IOException ex) {
+            Logger.getLogger(PrepPlannerController.class.getName()).log(Level.SEVERE, null, ex);
         }   
     }
 

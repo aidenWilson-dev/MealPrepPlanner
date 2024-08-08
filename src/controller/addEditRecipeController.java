@@ -47,7 +47,7 @@ public class AddEditRecipeController extends Controller<Recipe>  {
     public void onAdd(){
         try {
             //Create a new ingredient 
-            Ingredient newIngredient = new Ingredient("New Ingredient", 0);
+            Ingredient newIngredient = new Ingredient("New Ingredient", 0, "Grams");
             //Add new ingredient
             getRecipe().getIngredients().add(newIngredient);
             //Create new menu to edit newly created ingredient 

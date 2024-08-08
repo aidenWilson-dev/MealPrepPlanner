@@ -215,7 +215,7 @@
 }
 
 .check-box {
-    -fx-font-size: 10pt; /* Adjust the font size */
+    -fx-font-size: 20; /* Adjust the font size */
     -fx-text-fill: #ffffff;
 }
 
